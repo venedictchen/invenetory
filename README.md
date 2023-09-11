@@ -161,3 +161,28 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
     python manage.py migrate
     ```
 </details>
+
+<details>
+<summary>Membuat fungsi pada views.py yang akan mengembalikan ke template HTML</summary>
+
+1. Menambahkan import pada file views.py di direktori main.
+    ```python
+    from django.shortcuts import render
+    ```
+
+2. Membuat fungsi show_main yang menerima request dan mengembalikan tampilan yang sesuai,
+    ```python
+    
+    def show_main(request):
+        context = {
+            'name': 'Toshiba',
+            'amount': '2',
+            'description':'Flashdisk',
+            'code':'2232',
+            'price':'30000',
+        } #Data yang akan dikirimkan ke tampilan
+
+        return render(request, "main.html", context)
+
+    ```
+</details>
