@@ -1,11 +1,11 @@
-#Invenetory App Using Django
+# Invenetory App Using Django
 
-#Links
+# Links
 blablabla
 
 Assignment 2 for Platform Based Programming Lecture.
 
-#Making the Django Project
+# Making the Django Project
 <details>
 <summary> Initiate Django Project </summary>
 1. Making new directory named invenetory.
