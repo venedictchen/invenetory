@@ -163,7 +163,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 </details>
 
 <details>
-<summary>Membuat fungsi pada views.py yang akan mengembalikan ke template HTML</summary>
+<summary>Membuat fungsi pada views.py</summary>
 
 1. Menambahkan import pada file views.py di direktori main.
     ```python
