@@ -85,6 +85,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
         source env/bin/activate
         ```
 </details>
+
 <details>
 
 <summary>Membuat Aplikasi main dan templates</summary>
@@ -106,7 +107,9 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 3. Membuat direktorui baru dengan nama `templates`. 
 4. Membuat file baru dengan nama `main.html` di dalam direktori templates.
 </details>
+
 <details>
+
 <summmary> Membuat Routing URL Aplikasi dan Project</summary>
 
 1. Membuat file baru `urls.py` di dalam direktori main.
