@@ -13,6 +13,7 @@ Assignment 2 for Platform Based Programming Lecture.
     mkdir inventory
     cd inventory
 2. Create new virtual environment.
-
+    ```python
     python -m venv env
+    ```
 </details>
