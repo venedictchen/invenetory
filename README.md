@@ -5,9 +5,9 @@ blablabla
 
 Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
-## Making the Django Project
+## Membuat Projek Django 
 <details>
-<summary> Membuat Projek Django </summary>
+<summary> Initialize Django Project </summary>
 
 1. Membuat direktori baru dengan nama `invenetory`.
     ```sh
@@ -73,7 +73,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 ## Membuat App Main
 <details>
 
-<summary>Initialize</summary>
+<summary>Initialize Environment</summary>
 
 1. Menjalankan virtual environment.
     - Windows:
@@ -84,12 +84,24 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
         ```sh
         source env/bin/activate
         ```
+</details>
+<details>
 <summary>Membuat aplikasi main</summary>
 
-1. 
+1.  Membuat aplikasi main dengan perintah startapp
 
+    ```python
+    python manage.py startapp main
+    ```
+2. Menambahkan aplikasi main ke INSTALLED_APPS di settings.py invenetory agar app dapat muncul.
 
-
+    ```python
+    INSTALLED_APPS = [
+    ...,
+    'main',
+    ...
+    ]    
+    ```
 
 
 </details>
