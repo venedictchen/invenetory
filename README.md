@@ -109,7 +109,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 </details>
 <details>
 
-<summary> Membuat Routing URL Aplikasi dan Project</summary>
+<summary> Membuat Routing URL Aplikasi dan Projek</summary>
 
 1. Membuat file baru `urls.py` di dalam direktori main.
     ```python
@@ -122,18 +122,42 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
         path('', show_main, name='show_main'),
     ]
     ```
-2. Pada file urls.py di dalam direktori invenetory import fungsi `include` dari `django.urls`.
+2. Pada file `urls.py `di dalam `direktori invenetory` import fungsi `include` dari `django.urls`.
     ```python
     ...
-    from django.urls import path, include #Fungsi include untuk import rute URL dari aplikasi main ke dalam projek
+    from django.urls import path, include 
+    #Fungsi include untuk import rute URL dari aplikasi main ke dalam projek
     ...
     ```
-3. Menambahkan rute URL ke tampilan main di dalam variabel `urlpatterns`.
+3. Menambahkan rute URL untuk mengarahkan ke tampilan main di dalam variabel `urlpatterns`.
     ```python
     urlpatterns = [
     ...
     path('main/', include('main.urls')),
     ...
     ]
+    ```
+</details>
+
+<details>
+<summary>Membuat Model Aplikasi main dan migrasi</summary>
+
+1. Membuat model pada direktori aplikasi main di `models.py`
+    ```python
+    from django.db import models
+
+    class Item(models.Model):
+    name = models.CharField(max_length=255)
+    amount =  models.IntegerField()
+    description = models.TextField()
+    code = models.IntegerField()
+    price = models.IntegerField()   
+    ```
+2. Melakukan migrasi agar Django dapat melacak perubahan model.
+    ```python
+    python manage.py makemigrations
+    ```
+    ```python
+    python manage.py migrate
     ```
 </details>
