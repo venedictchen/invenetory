@@ -9,10 +9,10 @@ Assignment 2 for Platform Based Programming Lecture.
 <details>
 <summary> Initiate Django Project </summary>
 1. Create a new directory named "inventory." 
-    ```sh
     
     mkdir inventory
     cd inventory
-    ```
+2. Create new virtual environment.
 
+    python -m venv env
 </details>
