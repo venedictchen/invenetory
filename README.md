@@ -3,31 +3,31 @@
 # Links
 blablabla
 
-Assignment 2 for Platform Based Programming Lecture.
+Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
 ## Making the Django Project
 <details>
-<summary> Initiate Django Project </summary>
+<summary> Membuat Projek Django </summary>
 
-1. Create a new directory named `invenetory`.
+1. Membuat direktori baru dengan nama `invenetory`.
     ```sh
     mkdir inventory
     cd inventory
     ```
-2. Create new virtual environment.
+2. Membuat virtual environment baru.
     ```python
     python -m venv env
     ```
-3. Activate virtual environment.
+3. Aktivasi virtual environment.
     - Windows:
         ```sh
-        env\Scripts\activate.bat or env\Scripts\activate
+        env\Scripts\activate.bat atau env\Scripts\activate
         ```
     - Unix (Mac/Linux):
         ```sh
         source env/bin/activate
         ```
-4. In the same directory make `requirements.txt` and add some dependencies.
+4. Dalam direktori yang sama membuat `requirements.txt` dan menambahkan beberapa dependencies.
     ```python
     django
     gunicorn
@@ -36,11 +36,11 @@ Assignment 2 for Platform Based Programming Lecture.
     requests
     urllib3
     ```
-5. Install the dependencies with commands below. Don't forget to activate the virtual environment first.
+5. Install dependencies dengan perintah berikut dan mengaktifkan virtual environment sebelumnya.
     ```sh
     pip install -r requirements.txt
     ```
-6. Make the new Django Project named `invenetory`.
+6. Membuat projek Django baru dengan nama `invenetory`.
     ```django
     django-admin startproject invenetory .
     ```
@@ -48,16 +48,16 @@ Assignment 2 for Platform Based Programming Lecture.
 
 </details>
 <details>
-<summary> Configure and Testing Django Project to know is our Django Project working fine</summary>
+<summary> Configure and Testing Django Project untuk mengecek apakah Django Project kita berjalan</summary>
 
-1. Add `*` to `ALLOWED_HOST` at `settings.py`.
+1. Menambahkan `*` ke `ALLOWED_HOST` di `settings.py` untuk keperluan deployment.
     ```python
     ...
     ALLOWED_HOSTS = ["*"]
     ...
 
     ```
-2. Run the server to test.
+2. Menjalankan server untuk melihat apakah Django Project berjalan.
     - Windows:
     ```python
     python manage.py runserver
@@ -66,6 +66,30 @@ Assignment 2 for Platform Based Programming Lecture.
     ```
     ./manage.py runserver
     ```
-3. Open `http://localhost:8000` if rocket animation found mean Django Project succesfully worked.
+3. Buka `http://localhost:8000` jika terdapat animasi roket maka Django Project sudah berjalan.
+
+</details>
+
+## Membuat App Main
+<details>
+
+<summary>Initialize</summary>
+
+1. Menjalankan virtual environment.
+    - Windows:
+        ```sh
+        env\Scripts\activate.bat or env\Scripts\activate
+        ```
+    - Unix (Mac/Linux):
+        ```sh
+        source env/bin/activate
+        ```
+<summary>Membuat aplikasi main</summary>
+
+1. 
+
+
+
+
 
 </details>
