@@ -10,7 +10,7 @@ Assignment 2 for Platform Based Programming Lecture.
 <summary> Initiate Django Project </summary>
 1. Create a new directory named "inventory."
 
-    Markup : mkdir inventory
-             cd inventory
+    mkdir inventory
+    cd inventory
     
 </details>
