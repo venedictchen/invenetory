@@ -13,5 +13,6 @@ Assignment 2 for Platform Based Programming Lecture.
     ```
     mkdir inventory
     cd inventory
+    
     ```
 </details>
