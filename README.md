@@ -14,12 +14,10 @@ Assignment 2 for Platform Based Programming Lecture.
     mkdir inventory
     cd inventory
     ```
-
 2. Create new virtual environment.
     ```python
     python -m venv env
     ```
-
 3. Activate virtual environment.
     - Windows:
         ```sh
@@ -42,5 +40,32 @@ Assignment 2 for Platform Based Programming Lecture.
     ```sh
     pip install -r requirements.txt
     ```
+6. Make the new Django Project named `invenetory`.
+    ```django
+    django-admin startproject invenetory .
+    ```
+
+
+</details>
+<details>
+<summary> Configure and Testing Django Project to know is our Django Project working fine</summary>
+
+1. Add `*` to `ALLOWED_HOST` at `settings.py`.
+    ```python
+    ...
+    ALLOWED_HOSTS = ["*"]
+    ...
+
+    ```
+2. Run the server to test.
+    - Windows:
+    ```python
+    python manage.py runserver
+    ```
+    - Unix:
+    ```
+    ./manage.py runserver
+    ```
+3. Open `http://localhost:8000` if rocket animation found mean Django Project succesfully worked.
 
 </details>
