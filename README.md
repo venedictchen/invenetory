@@ -86,7 +86,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
         ```
 </details>
 <details>
-<summary>Membuat aplikasi main</summary>
+<summary>Membuat Aplikasi main dan templates</summary>
 
 1.  Membuat aplikasi main dengan perintah startapp
 
@@ -102,5 +102,34 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
     ...
     ]    
     ```
+3.   Membuat file baru dengan nama `main.html`di dalam direktori templates.
 </details>
-Membuat file templates di direktori main
+<details>
+<summmary> Membuat Routing URL Aplikasi dan Project</summary>
+
+1. Membuat file baru `urls.py` di dalam direktori main.
+    ```python
+    from django.urls import path #Definisi pola URL
+    from main.views import show_main #Fungsi dari views.py untuk tampilan
+
+    app_name = 'main'
+
+    urlpatterns = [
+        path('', show_main, name='show_main'),
+    ]
+    ```
+2. Pada file urls.py di dalam direktori invenetory import fungsi `include` dari `django.urls`.
+    ```python
+    ...
+    from django.urls import path, include #Fungsi include untuk import rute URL dari aplikasi main ke dalam projek
+    ...
+    ```
+3. Menambahkan rute URL ke tampilan main di dalam variabel `urlpatterns`.
+    ```python
+    urlpatterns = [
+    ...
+    path('main/', include('main.urls')),
+    ...
+    ]
+    ```
+</details>
