@@ -86,6 +86,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
         ```
 </details>
 <details>
+
 <summary>Membuat Aplikasi main dan templates</summary>
 
 1.  Membuat aplikasi main dengan perintah startapp
