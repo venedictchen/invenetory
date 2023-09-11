@@ -102,6 +102,5 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
     ...
     ]    
     ```
-
-
 </details>
+Membuat file templates di direktori main
