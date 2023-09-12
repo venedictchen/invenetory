@@ -341,6 +341,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
     git push -u origin main
 
     ```
+---
 
 ## Django Unit Testing
 <summary>Membuat Unit Test</summary>
