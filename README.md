@@ -195,6 +195,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 ---
 
 ## Django Unit Testing
+
 <details>
 <summary>Membuat Unit Test</summary>
 
