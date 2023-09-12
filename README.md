@@ -427,12 +427,26 @@ memisahkan kode menjadi 3 bagian, yaitu Model, View, dan Controller.
 
 1. MVT (Model View Template) adalah pola desain yang mirip dengan MVC. MVT berbeda dengan MVC pada bagian
 controller. Peran controller diganti oleh template. Pada MVC, kita harus menulis semua kode kontrol tertentu. Sedangkan pada MVT bagian controller di handle oleh framework itu sendiri.
+  - Model:
+        Model adalah bagian yang bertugas untuk mengelola data di database.
+    - View:
+        View yang bertugas untuk menampilkan output dari data yang telah diproses.
+    - Template:
+        Sebuah file HTML yang merupakan struktur dari tampilan yang akan diberikan ke pengguna.
 </details>
 
 <details>
 <summary>MVVM</summary>
 
-1. MVVM(Model View ViewModel) adalah pola desain yang dikenalkan oleh Microsoft sebagai alternatif dari MVC.
+1. MVVM (Model View ViewModel) adalah pola desain yang dikenalkan oleh Microsoft sebagai alternatif dari MVC.
 MVVM berfokus untuk membedakan bagian logic dari program dan UI(User Interface) terpisah. Controller diganti
 oleh ViewModel. ViewModel terdiri dari Model yang diubah menjadi View, dan berisi perintah dari view yang dapat memengaruhi model.
+  - Model:
+        Model adalah bagian yang bertugas untuk logika aplikasi dan mengelola data yang didapatkan dari
+        ViewModel.
+    - View:
+        View yang bertugas untuk menentukan struktur, tata letak, teks, gambar dan element UI lainnya. View akan menginformasikan ViewModel apa yang dilakukan oleh pengguna.
+    - ViewModel:
+        ViewModel merupakan bagian yang menjadi perantar antara View dan Model.
+
 </details>
