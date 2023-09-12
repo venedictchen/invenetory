@@ -1,7 +1,7 @@
 # Invenetory App Using Django
 
 # Links
-blablabla
+https://invenetory.adaptable.app
 
 Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
