@@ -189,6 +189,8 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
 
 ## Post Project To GitHub
+<details>
+<summary>gitignore ,init, add, commit, push</summary>
 1. Menambahkan file `.gitignore`
     ```
     # Django
@@ -339,6 +341,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
     git push -u origin main
 
     ```
+</details>
 
 ---
 
