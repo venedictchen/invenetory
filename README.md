@@ -389,3 +389,4 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 ---
 
 ## Relasi urls.py, views.py, models.py, html (MTV)
+<img src=baganpbp.jpg width = 800 height=300/>
