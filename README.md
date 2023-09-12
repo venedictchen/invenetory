@@ -7,7 +7,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
 ---
 
-## Membuat Proyek Django 
+## Membuat Projek Django 
 <details>
 <summary> Initialize Django Project </summary>
 
@@ -42,7 +42,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
     ```sh
     pip install -r requirements.txt
     ```
-6. Membuat proyek Django baru dengan nama `invenetory`.
+6. Membuat projek Django baru dengan nama `invenetory`.
     ```django
     django-admin startproject invenetory .
     ```
