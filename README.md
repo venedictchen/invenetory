@@ -187,7 +187,6 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
     ```
 </details>
 
-<details>
 
 ## Post Project To GitHub
 
