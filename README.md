@@ -390,3 +390,10 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
 ## Relasi urls.py, views.py, models.py, html (MTV)
 <img src=baganpbp.png width = 800 height=400/>
+
+1. HTTP Request akan diterima url.py dan akan diproses untuk mencari pola url dan method yang sesuai dengan request.
+2. Pada views.py akan dijalankan logika method yang dibutuhkan.
+3. Data akan diminta ke models.py dan models.py akan memberikan data yang dibutuhkan.
+4. Proses write juga bisa dilakukan ke models.py tidak hanya read.
+5. Selanjutnya template (.html) akan memberikan bentuk html ke views.py
+6. Terakhir views.py akan memberikan HTTP Response berupa html.
