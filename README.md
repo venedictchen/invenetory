@@ -405,3 +405,9 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 Kita membutuhkan virtual environment agar tidak terjadinya tabrakan depedensi antar projek. Tabrakan
 atau konflik yang dimaksud adalah adanya faktor luar, seperti python version. Dengan adanya virtual environment, maka setiap projek akan terisolasi sendiri dan memiliki
 dependensi masing-masing.
+
+## Apa itu MVC, MVT, MVVM?
+
+<details>
+<summary>MVC</summary>
+</details>
