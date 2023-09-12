@@ -5,6 +5,8 @@ blablabla
 
 Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
+---
+
 ## Membuat Projek Django 
 <details>
 <summary> Initialize Django Project </summary>
@@ -69,6 +71,8 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 3. Buka `http://localhost:8000` jika terdapat animasi roket maka Django Project sudah berjalan.
 
 </details>
+
+---
 
 ## Membuat App Main
 <details>
@@ -187,6 +191,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
     ```
 </details>
 
+---
 
 ## Post Project To GitHub
 <details>
