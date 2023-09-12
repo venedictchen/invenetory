@@ -14,3 +14,5 @@ class mainTest(TestCase):
         self.assertEqual(item.name, 'Test Name')
         self.assertEqual(item.amount, 0)
         self.assertEqual(item.description, 'Test Description')
+        self.assertEqual(item.code, 0)
+        self.assertEqual(item.price, 0)
