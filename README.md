@@ -410,4 +410,10 @@ dependensi masing-masing.
 
 <details>
 <summary>MVC</summary>
+
+1. MVC (Model View Controller) adalah pola desain dalam membuat sebuah aplikasi dengan cara
+memisahkan kode menjadi 3 bagian, yaitu Model, View, dan Controller.
+    - Model:
+
+
 </details>
