@@ -186,3 +186,39 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
     ```
 </details>
+
+<details>
+
+## Django Unit Testing
+<summary>Membuat Unit Test</summary>
+
+1. Membuat unit test pada berkas `tests.py` di direktori aplikasi main.
+    ```python
+    from django.test import TestCase, Client
+
+    class mainTest(TestCase):
+        def test_main_url_is_exist(self):
+            response = Client().get('/main/')
+            self.assertEqual(response.status_code, 200)
+
+        def test_main_using_main_template(self):
+            response = Client().get('/main/')
+            self.assertTemplateUsed(response, 'main.html')
+    ```
+2. Menjalankan Test
+    ```python
+    python manage.py test
+    ```
+3. Apabila Test berhasil akan keluar informasi sebagai berikut.
+    ```sh
+    Found 2 test(s).
+    Creating test database for alias 'default'...
+    System check identified no issues (0 silenced).
+    ..
+    ----------------------------------------------------------------------
+    Ran 2 tests in 0.016s
+
+    OK
+    Destroying test database for alias 'default'...
+    ```
+</details>
