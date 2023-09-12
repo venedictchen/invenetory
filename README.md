@@ -388,6 +388,20 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
 ---
 
+## Deployment Adaptable
+
+1. Membuka website Adaptable dan sign in with github.
+2. Create new app dan Connect an Existing Repository.
+3. Memilih invenetory dan branch main sebagai aplikasi yang mau di deploy.
+4. Memilih python app template.
+5. Memilih PostgeSQL untuk tipe database.
+6. Memilih python version yang sesuai di sini `3.11`.
+7. Mengisi start command sebagai berikut `python manage.py migrate && gunicorn shopping_list.wsgi`.
+8. Memilih nama domain `invenetory`.
+9. Centang bagian HTTP Listener Port.
+
+---
+
 ## Relasi urls.py, views.py, models.py, html (MTV)
 <img src=baganpbp.png width = 800 height=500/>
 
