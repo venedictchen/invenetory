@@ -423,7 +423,7 @@ memisahkan kode menjadi 3 bagian, yaitu Model, View, dan Controller.
 </details>
 
 <details>
-<summmary>MVT</summary>
+<summary>MVT</summary>
 
 1. MVT (Model View Template) adalah pola desain yang mirip dengan MVC. MVT berbeda dengan MVC pada bagian
 controller. Peran controller diganti oleh template. Pada MVC, kita harus menulis semua kode kontrol tertentu. Sedangkan pada MVT bagian controller di handle oleh framework itu sendiri.
