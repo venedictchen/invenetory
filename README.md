@@ -222,3 +222,5 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
     Destroying test database for alias 'default'...
     ```
 </details>
+
+## Relasi urls.py, views.py, models.py, html (MTV)
