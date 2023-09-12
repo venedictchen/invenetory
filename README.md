@@ -397,3 +397,11 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 4. Proses write juga bisa dilakukan ke models.py tidak hanya read.
 5. Selanjutnya template (.html) akan memberikan bentuk html ke views.py
 6. Terakhir views.py akan memberikan HTTP Response berupa html.
+
+---
+
+## Mengapa kita memerlukan virtual environment?
+
+Kita membutuhkan virtual environment agar tidak terjadinya tabrakan depedensi antar projek. Tabrakan
+atau konflik yang dimaksud adalah adanya faktor luar, seperti python version. Dengan adanya virtual environment, maka setiap projek akan terisolasi sendiri dan memiliki
+dependensi masing-masing.
