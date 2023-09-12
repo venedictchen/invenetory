@@ -414,6 +414,25 @@ dependensi masing-masing.
 1. MVC (Model View Controller) adalah pola desain dalam membuat sebuah aplikasi dengan cara
 memisahkan kode menjadi 3 bagian, yaitu Model, View, dan Controller.
     - Model:
+        Model adalah bagian yang bertugas untuk mengelola data di database.
+    - View:
+        View yang bertugas untuk menampilkan response dari request yang diberikan.
+    - Controller:
+        Controller merupakan bagian yang menghubungkan antara model dan view.
 
+</details>
 
+<details>
+<summmary>MVT</summary>
+
+1. MVT (Model View Template) adalah pola desain yang mirip dengan MVC. MVT berbeda dengan MVC pada bagian
+controller. Peran controller diganti oleh template. Pada MVC, kita harus menulis semua kode kontrol tertentu. Sedangkan pada MVT bagian controller di handle oleh framework itu sendiri.
+</details>
+
+<details>
+<summary>MVVM</summary>
+
+1. MVVM(Model View ViewModel) adalah pola desain yang dikenalkan oleh Microsoft sebagai alternatif dari MVC.
+MVVM berfokus untuk membedakan bagian logic dari program dan UI(User Interface) terpisah. Controller diganti
+oleh ViewModel. ViewModel terdiri dari Model yang diubah menjadi View, dan berisi perintah dari view yang dapat memengaruhi model.
 </details>
