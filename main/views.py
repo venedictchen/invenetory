@@ -2,9 +2,9 @@ from django.shortcuts import render
 
 def show_main(request):
     context = {
-        'name': 'Toshiba',
+        'name': 'Flashdisk',
         'amount': '2',
-        'description':'Flashdisk',
+        'description':'Toshiba',
         'code':'2232',
         'price':'30000',
     }
