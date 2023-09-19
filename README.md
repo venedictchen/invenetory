@@ -748,23 +748,23 @@ bahasa pemograman. Oleh karena itu, JSON lebih banyak digunakan dalam pertukaran
 ## Screenshot Postman
 
 1. HTML
-    - <img src=fotohtml1.png width = 800 height=500/>
-    - <img src=fotohtml2.png width = 800 height=500/>
-    - <img src=fotohtml3.png width = 800 height=500/>
-    - <img src=fotohtml4.png width = 800 height=500/>
-    - <img src=fotohtml5.png width = 800 height=500/>
+    - <img src=./images/fotohtml1.png width = 800 height=500/>
+    - <img src=./images/fotohtml2.png width = 800 height=500/>
+    - <img src=./images/fotohtml3.png width = 800 height=500/>
+    - <img src=./images/fotohtml4.png width = 800 height=500/>
+    - <img src=./images/fotohtml5.png width = 800 height=500/>
 
 2. XML
-    - <img src=fotoxml.png width = 800 height=500>
-    - <img src=fotoxml2.png width = 800 height=500>
+    - <img src=./images/fotoxml.png width = 800 height=500>
+    - <img src=./images/fotoxml2.png width = 800 height=500>
 
 3. JSON
-    - <img src=fotojson.png width=800 height=500>
-    - <img src=fotojson2.png width=800 height=500>
-    - <img src=fotojson3.png width=800 height=500>
+    - <img src=./images/fotojson.png width=800 height=500>
+    - <img src=./images/fotojson2.png width=800 height=500>
+    - <img src=./images/fotojson3.png width=800 height=500>
 
 4. XML by ID
-    - <img src=fotoxmlid.png width=800 height=500>
+    - <img src=./images/fotoxmlid.png width=800 height=500>
 
 5. JSON by ID
-    - <img src=fotojsonid.png width=800 height=500>
+    - <img src=./images/fotojsonid.png width=800 height=500>
