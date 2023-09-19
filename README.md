@@ -359,7 +359,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 1. Membuat unit test pada berkas `tests.py` di direktori aplikasi main.
     ```python
     from django.test import TestCase, Client
-
+    from .models import Item
     class mainTest(TestCase):
         def test_main_url_is_exist(self):
             response = Client().get('/main/')
@@ -368,6 +368,14 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
         def test_main_using_main_template(self):
             response = Client().get('/main/')
             self.assertTemplateUsed(response, 'main.html')
+            
+        def test_model_creation(self):
+            item = Item.objects.create(name='Test Name',amount=0,description='Test Description',code=0,price=0)
+            self.assertEqual(item.name, 'Test Name')
+            self.assertEqual(item.amount, 0)
+            self.assertEqual(item.description, 'Test Description')
+            self.assertEqual(item.code, 0)
+            self.assertEqual(item.price, 0)
     ```
 2. Menjalankan Test
     ```python
@@ -404,6 +412,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 ---
 
 ## Relasi urls.py, views.py, models.py, html (MTV)
+
 <img src=./images/baganpbp.png width = 800 height=500/>
 
 1. HTTP Request akan diterima url.py dan akan diproses untuk mencari pola url dan method yang sesuai dengan request.
