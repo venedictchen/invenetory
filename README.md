@@ -462,6 +462,302 @@ oleh ViewModel. ViewModel terdiri dari Model yang diubah menjadi View, dan beris
     - View:
         View yang bertugas untuk menentukan struktur, tata letak, teks, gambar dan element UI lainnya. View akan menginformasikan ViewModel apa yang dilakukan oleh pengguna.
     - ViewModel:
-        ViewModel merupakan bagian yang menjadi perantar antara View dan Model.
+        ViewModel merupakan bagian yang menjadi perantara antara View dan Model.
 
 </details>
+
+---
+
+## Apa Perbedaan antara form POST dan form GET dalam Django?
+
+Form POST dan GET memiliki perbedaan sebagai berikut:   
+
+- Keamanan Form POST lebih baik dibandingkan Form GET karena data tidak terlihat pada url bar, sedangkan
+Form GET data terlihat pada url bar dan dapat dengan mudah dilihat.
+
+- Form GET memiliki batasan jumlah data yang dapat dikirimkan. Sedangkan, form POST dapat mengirim data dengan
+jumlah yang besar karena data dikirimkan ke body.
+
+- Form GET digunakan ketika kita tidak ingin mengubah data, seperti pencarian. Sedangkan Form POST dapat kita
+gunakan untuk mengubah data yang ada.
+
+---
+
+## Apa perbedaan utama antara XML, JSON, dan HTML dalam konteks pengiriman data?
+
+Perbedaan utama antara XML, JSON, dan HTML dalam pengiriman data adalah sebagai berikut:
+
+- XML: 
+    - XML (eXtensible Markup Language) menyimpan data dalam bentuk mirip sebuah tree yang memiliki satu root. 
+    Bentuk dari XML mirip dengan HTML yang memiliki tag-tag. XML memiliki fleksibilitas lebih tinggi, tetapi
+    lebih berat secara syntax. XML juga dapat menerima banyak tipe data, seperti images, charts, graph, dan masih banyak lagi.
+
+- JSON: 
+    - JSON (Javascript Object Notation) menyimpan data dalam bentuk dictionary objek yang memiliki key dan value. Data-data yang ada dipisah dengan koma. JSON juga lebih mudah dibaca karena strukturnya yang mirip
+    dengan objek dalam Javascript.
+
+- HTML: 
+    - HTML berfungsi untuk menampilkan data-data yang ada dari JSON atau XML kepada client sehingga dapat dilihat pengguna.
+
+---
+
+## Mengapa JSON sering digunakan dalam pertukaran data antara aplikasi web modern?
+
+- JSON lebih sering digunakan dalam pertukaran data antara aplikasi web modern karena JSON lebih mudah untuk dibaca dan lebih ringan sehingga lebih cepat. Format JSON juga lebih mudah diparse dan support untuk banyak
+bahasa pemograman. Oleh karena itu, JSON lebih banyak digunakan dalam pertukaran data di aplikasi web modern.
+
+---
+
+## Implementasi Form, Views, Routing.
+
+<details>
+<summary>Membuat Form</summary>
+
+1. Membuat base HTML template di root folder. Di sini saya menggunakan Tailwind CSS untuk styling
+    ```html
+    {% load static %}
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8" />
+            <meta
+                name="viewport"
+                content="width=device-width, initial-scale=1.0"
+            />
+            <script src="https://cdn.tailwindcss.com"></script>
+            {% block meta %}
+            {% endblock meta %}
+        </head>
+
+        <body>
+            {% block content %}
+            {% endblock content %}
+        </body>
+    </html>
+    ```
+2. Add ke `settings.py` agar `base.html` visible sebagai templates.
+    ```python
+
+    TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [BASE_DIR/'templates'],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        },
+    },
+    ]
+    ```
+
+3. Membuat file `forms.py` pada direktori main untuk membuat ItemForm yang berisi model dan fields.
+    ```python
+    from django.forms import ModelForm
+    from main.models import Item
+
+    class ItemForm(ModelForm):
+        class Meta:
+            model = Item
+            fields = ["name", "amount", "description","code","price"]
+    ```
+
+4. Membuat fungsi baru `create_item` di views.py yang menerima request, mengakses create_item.html, membuat form dengan ItemForm, validasi form, menyimpan form, dan redirect ke halaman main saat berhasil menyimpan data.
+    ```python
+    ...
+    from django.shortcuts import render
+    from django.http import HttpResponseRedirect
+    from django.urls import reverse
+    from django.http import HttpResponse
+    from django.core import serializers
+
+    def create_item(request):
+
+    form = ItemForm(request.POST or None)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "create_item.html", context)
+    ```
+5. Menambahkan path ke `urls.py` agar `create_item` dapat diakses.
+    ```python
+    from main.views import show_main, create_item
+    path('create-item', create_item, name='create_item'),
+    ```
+6. Mengubah fungsi `show_main` pada `views.py` dengan memberikan semua item ke dalam context items.
+    ```python
+    ...
+    from main.models import Item
+    def show_main(request):
+        items = Item.objects.all()
+        context = {
+            'nama_mahasiswa': 'Venedict Chen',
+            'kelas': 'D',
+            'items':items,
+        }
+
+        return render(request, "main.html", context)
+    ```
+
+
+7. Mengisi `create_item.html` dengan form yang sudah dibuat.
+    ```html
+    {% extends 'base.html' %} 
+    
+    {% block content %}
+    <div class="flex flex-col items-center text-white t w-full bg-gray-600 h-screen ">
+        
+        <h5 class="text-3xl text-yellow-300 font-bold text-center mt-10 mb-14">Add New Item</h5>
+        
+        <div class="mr-20 text-black">
+        <form method="POST">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+            <tr>
+            <td></td>
+            <td >
+        <input class="text-black font-semibold mt-10 rounded-lg px-5 bg-white" type="submit" value="Add Item"/>
+            </td>
+            </tr>
+        </table>
+    </form>
+    </div>
+    </div>
+
+    {% endblock %}
+    ```
+8. Membuat `show_html.html` untuk menunjukkan data. Saya menambahkan back to main menu dan add item.
+    ```html
+    {% extends 'base.html' %} 
+
+    {% block content %}
+    <div class="flex flex-col px-12 py-24 min-h-screen text-white bg-gray-600">
+        <h2 class="text-3xl text-yellow-300 font-bold mb-8">Your Items,</h2>
+    <table class="table-fixed w-full border-collapse border border-white">
+        <thead>
+            <tr>
+                <th class="border border-white px-4 py-2">Name</th>
+                <th class="border border-white px-4 py-2">Amount</th>
+                <th class="border border-white px-4 py-2">Description</th>
+                <th class="border border-white px-4 py-2">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in items %}
+                <tr>
+                    <td class="border border-white px-4 py-2">{{item.code}} - {{ item.name }}</td>
+                    <td class="border border-white px-4 py-2">{{ item.amount }}</td>
+                    <td class="border border-white px-4 py-2">{{ item.description }}</td>
+                    <td class="border border-white px-4 py-2">{{ item.price }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br />
+    <div class="flex flex-row">
+    <a href="{% url 'main:show_main' %}">
+        <button class="text-black font-semibold rounded-lg bg-white py-2 px-2 mx-6">
+            Back to Main Menu
+        </button>
+    </a>
+    <a href="{% url 'main:create_item' %}">
+        <button class="text-black rounded-lg font-semibold  bg-white py-2 px-2 mx-6">
+            Add Items
+        </button>
+    </a>
+    </div>
+    </div>
+
+    {% endblock %}
+    ```
+</details>
+<details>
+<summary>Menambahkan Fungsi di views.py</summary>
+
+1. Menambahkan import `HttpResponse` dan `Serializer`.
+    ```python
+    ...
+    from django.http import HttpResponse
+    from django.core import serializers
+    ```
+2. Membuat fungsi untuk `show_html`.
+    ```python
+    def show_html(request):
+        items = Item.objects.all()
+        context = {'items':items}
+        return render(request,"show_html.html",context)
+    ```
+3. Membuat fungsi untuk `show_xml` dengan return HttpResponse yang kita serialize dan parameter `content_type="application/xml`.
+    ```python
+    def show_xml(request):
+        data = Item.objects.all()
+        return HttpResponse(serializers.serialize("xml",data),content_type = "application/xml")
+    ```
+4. Membuat fungsi untuk `show_json` dengan return HttpResponse yang kita serialize dan parameter `content_type="application/json`.
+    ```python
+    def show_json(request):
+        data = Item.objects.all()
+        return HttpResponse(serializers.serialize("json",data),content_type= "application/json")
+
+    ```
+5. Membuat fungsi untuk `show_xml_by_id` dengan return HttpResponse yang kita serialize dan parameter `content_type="application/xml`. Kita filter object berdasarkan id.
+    ```python
+    def show_xml_by_id(request,id):
+        data = Item.objects.filter(pk=id)
+        return HttpResponse(serializers.serialize("xml",data),content_type="application/xml")
+    ```
+6. Membuat fungsi untuk `show_json_by_id` dengan return HttpResponse yang kita serialize dan parameter `content_type="application/json`. Kita filter object berdasarkan id.
+    ```python
+    def show_json_by_id(request,id):
+        data = Item.objects.filter(pk=id)
+        return HttpResponse(serializers.serialize("json",data),content_type="application/json")
+    ```
+</details>
+
+<details>
+<summary>Menambahkan Routing di urls.py</summary>
+
+1. Menambahkan import fungsi yang terlah dibuat pada `urls.py` di direktori main.
+    ```python
+    from main.views import show_main, create_item, show_xml, show_json, show_xml_by_id, show_json_by_id,show_html
+    ```
+2. Menambahkan path dengan fungsi yang sudah dibuat sebelumnya. Menambahkan juga `<int:id>` untuk akses by_id.
+    ```python
+    urlpatterns = [
+        path('', show_main, name='show_main'),
+        path('create-item', create_item, name='create_item'),
+        path('xml/',show_xml,name='show_xml'),
+        path('html/',show_html,name='show_html'),
+        path('json/',show_json,name='show_json'),
+        path('xml/<int:id>/',show_xml_by_id,name='show_xml_by_id'),
+        path('json/<int:id>/',show_json_by_id,name='show_json_by_id')
+    ]
+    ```
+</details>
+
+## Screenshot Postman
+
+1. HTML
+    - <img src=fotohtml.png width = 800 height=500/>
+
+2. XML
+    - <img src=fotoxml.png width = 800 height=500>
+
+3. JSON
+    - <img src=fotojson.png width=800 height=500>
+
+4. XML by ID
+    - <img src=fotoxmlid.png width=800 height=500>
+
+5. JSON by ID
+    - <img src=fotojsonid.png width=800 height=500>

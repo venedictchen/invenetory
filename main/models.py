@@ -5,4 +5,4 @@ class Item(models.Model):
     amount =  models.IntegerField()
     description = models.TextField()
     code = models.IntegerField()
-    price = models.IntegerField()
+    price = models.FloatField()
