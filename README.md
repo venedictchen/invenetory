@@ -773,6 +773,6 @@ bahasa pemograman. Oleh karena itu, JSON lebih banyak digunakan dalam pertukaran
     - <img src=./images/fotojson3.png>
 
 4. XML by ID
-    - <img src=./images/fotoxmlid.png
+    - <img src=./images/fotoxmlid.png>
 5. JSON by ID
     - <img src=./images/fotojsonid.png>
