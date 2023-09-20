@@ -413,7 +413,7 @@ Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
 
 ## Relasi urls.py, views.py, models.py, html (MTV)
 
-<img src=./images/baganpbp.png width = 800 height=500/>
+<img src=./images/baganpbp.png>
 
 1. HTTP Request akan diterima url.py dan akan diproses untuk mencari pola url dan method yang sesuai dengan request.
 2. Pada views.py akan dijalankan logika method yang dibutuhkan.
@@ -757,23 +757,22 @@ bahasa pemograman. Oleh karena itu, JSON lebih banyak digunakan dalam pertukaran
 ## Screenshot Postman
 
 1. HTML
-    - <img src=./images/fotohtml1.png width = 800 height=500/>
-    - <img src=./images/fotohtml2.png width = 800 height=500/>
-    - <img src=./images/fotohtml3.png width = 800 height=500/>
-    - <img src=./images/fotohtml4.png width = 800 height=500/>
-    - <img src=./images/fotohtml5.png width = 800 height=500/>
+    - <img src=./images/fotohtml1.png >
+    - <img src=./images/fotohtml2.png >
+    - <img src=./images/fotohtml3.png >
+    - <img src=./images/fotohtml4.png >
+    - <img src=./images/fotohtml5.png >
 
 2. XML
-    - <img src=./images/fotoxml.png width = 800 height=500>
-    - <img src=./images/fotoxml2.png width = 800 height=500>
+    - <img src=./images/fotoxml.png>
+    - <img src=./images/fotoxml2.png>
 
 3. JSON
-    - <img src=./images/fotojson.png width=800 height=500>
-    - <img src=./images/fotojson2.png width=800 height=500>
-    - <img src=./images/fotojson3.png width=800 height=500>
+    - <img src=./images/fotojson.png>
+    - <img src=./images/fotojson2.png>
+    - <img src=./images/fotojson3.png>
 
 4. XML by ID
-    - <img src=./images/fotoxmlid.png width=800 height=500>
-
+    - <img src=./images/fotoxmlid.png
 5. JSON by ID
-    - <img src=./images/fotojsonid.png width=800 height=500>
+    - <img src=./images/fotojsonid.png>
