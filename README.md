@@ -10,7 +10,7 @@ https://invenetory.adaptable.app/main
 <br/>
 
 
-# Tugas 2
+## Tugas 2
 
 ---
 
@@ -487,7 +487,7 @@ oleh ViewModel. ViewModel terdiri dari Model yang diubah menjadi View, dan beris
 
 <br/>
 
-# Tugas 3
+## Tugas 3
 
 ---
 
