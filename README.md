@@ -3,7 +3,14 @@
 # Links
 https://invenetory.adaptable.app/main
 
-Tugas 2 Mata Kuliah Pemograman Berbasis Platform.
+- [Tugas 2](#Tugas2)
+- [Tugas 3](#Tugas3)
+- [Tugas 4](#Tugas4)
+
+<br/>
+
+
+# Tugas 2
 
 ---
 
@@ -474,6 +481,13 @@ oleh ViewModel. ViewModel terdiri dari Model yang diubah menjadi View, dan beris
         ViewModel merupakan bagian yang menjadi perantara antara View dan Model.
 
 </details>
+
+---
+
+
+<br/>
+
+# Tugas 3
 
 ---
 
