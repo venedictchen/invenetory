@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+    <title>Register</title>
+{% endblock meta %}
+
+{% block content %}  
+
+<div class = "login bg-[#C08261] min-h-screen flex flex-col items-center">
+    <div class="flex flex-col items-center gap-6 text-center bg-[#BA704F] px-32 py-10 my-24">
+        <h1 class="text-3xl font-semibold">Register</h1>
+     
+
+        <form method="POST" >  
+            {% csrf_token %}  
+            <table>  
+                {{ form.as_table }}  
+                <tr>  
+                    <td></td>
+                    <td><input type="submit" class="text-black font-semibold mt-6 rounded-lg px-5 py-2 bg-[#9A3B3B]" 
+                        name="submit" value="Daftar"/></td>  
+                </tr>  
+            </table>  
+        </form>
+
+    {% if messages %}  
+        <ul>   
+            {% for message in messages %}  
+                <li>{{ message }}</li>  
+                {% endfor %}  
+        </ul>   
+    {% endif %}
+    </div>
+</div>  
+
+{% endblock content %}

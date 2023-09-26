@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block meta %}
+    <title>Login</title>
+{% endblock meta %}
+
+{% block content %}
+<div class="login bg-[#C08261] min-h-screen flex flex-col items-center">
+
+    <div class="flex flex-col text-center items-center   mr-8 gap-6 text-center bg-[#BA704F] px-32 py-10 my-32">
+        <h1 class="text-3xl font-semibold">Login Here!</h1>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                </tr>
+
+                <tr>    
+                    <td>Password: </td>
+                    <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    
+                    <td >
+                        <input class="text-black font-semibold mt-6 rounded-lg px-5 py-2 bg-[#9A3B3B]" 
+                        type="submit" value="Login"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a></p>
+    </div>
+</div>
+{% endblock content %}

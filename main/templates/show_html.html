@@ -1,42 +1,106 @@
 {% extends 'base.html' %} 
-
 {% block content %}
-<div class="flex flex-col px-12 py-24 min-h-screen text-white bg-gray-600">
-    <h2 class="text-3xl text-yellow-300 font-bold mb-8">Your Items,</h2>
-<table class="table-fixed w-full border-collapse border border-white">
+<div class="flex flex-col px-12 py-24 min-h-screen text-black bg-[#C08261]">
+  <h2 class="text-3xl text-[#630000] font-bold mb-8">Your Items</h2>
+  <table class="w-full border-collapse border border-[#630000]">
     <thead>
-        <tr>
-            <th class="border border-white px-4 py-2">Name</th>
-            <th class="border border-white px-4 py-2">Amount</th>
-            <th class="border border-white px-4 py-2">Description</th>
-            <th class="border border-white px-4 py-2">Price</th>
-        </tr>
+      <tr>
+        <th
+          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
+        >
+          Name
+        </th>
+        <th
+          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
+        >
+          Amount
+        </th>
+        <th
+          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
+        >
+          Description
+        </th>
+        <th
+          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
+        >
+          Price
+        </th>
+        <th
+          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
+        >
+          Actions
+        </th>
+      </tr>
     </thead>
     <tbody>
-        {% for item in items %}
-            <tr>
-                <td class="border border-white px-4 py-2">{{item.code}} - {{ item.name }}</td>
-                <td class="border border-white px-4 py-2">{{ item.amount }}</td>
-                <td class="border border-white px-4 py-2">{{ item.description }}</td>
-                <td class="border border-white px-4 py-2">{{ item.price }}</td>
-            </tr>
-        {% endfor %}
+      {% for item in items %}
+      <tr>
+        <td
+          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
+        >
+          {{item.code}} - {{ item.name }}
+        </td>
+        <td
+          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
+        >
+          {{ item.amount }}
+        </td>
+        <td
+          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
+        >
+          {{ item.description }}
+        </td>
+        <td
+          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
+        >
+          Rp{{ item.price }}
+        </td>
+        <td
+          class="text-[#493323] font-semibold items-center text-center border border-[#493323] px-4 py-2"
+        >
+        <a href="{% url 'main:delete_item' item.id %}">
+          <button
+            class="text-black font-semibold rounded-lg bg-[#9A3B3B] px-1 py-1 mx-1 hover:bg-[#D13535]"
+          >
+            Delete Item
+          </button>
+        </a>
+          <a href="{% url 'main:increase_item_amount' item.id %}">
+          <button
+            class="text-black font-semibold rounded-lg bg-[#9A3B3B] px-1 py-1 mx-1 hover:bg-[#D13535]"
+          >
+          Increase +
+        </button>
+        </a>    
+        <a href="{% url 'main:decrease_item_amount' item.id %}">
+          <button
+            class="text-black font-semibold rounded-lg bg-[#9A3B3B] px-1 py-1 mx-1 hover:bg-[#D13535]"
+          >
+            Decrease -
+          </button>
+        </a>
+        </td>
+      </tr>
+      {% endfor %}
     </tbody>
-</table>
+  </table>
 
-<br />
-<div class="flex flex-row">
-<a href="{% url 'main:show_main' %}">
-    <button class="text-black font-semibold rounded-lg bg-white py-2 px-2 mx-6">
+  <div class="flex flex-row mt-4">
+    <a href="{% url 'main:show_main' %}">
+      <button
+        class="text-black font-semibold rounded-lg bg-[#9A3B3B] py-2 px-4 mx-2 hover:bg-[#D13535]"
+      >
         Back to Main Menu
-    </button>
-</a>
-<a href="{% url 'main:create_item' %}">
-    <button class="text-black rounded-lg font-semibold  bg-white py-2 px-2 mx-6">
+      </button>
+    </a>
+    <a href="{% url 'main:create_item' %}">
+      <button
+        class="text-black font-semibold rounded-lg bg-[#9A3B3B] py-2 px-4 mx-2 hover:bg-[#D13535]"
+      >
         Add Items
-    </button>
-</a>
-</div>
+      </button>
+    </a>
+  </div>
 </div>
 
 {% endblock %}
