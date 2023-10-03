@@ -1,106 +1,53 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %}
+{% load static %}
 {% block content %}
-<div class="flex flex-col px-12 py-24 min-h-screen text-black bg-[#C08261]">
+<div class="flex flex-col pl-12  py-12 min-h-screen text-black bg-[#C08261]">
   <h2 class="text-3xl text-[#630000] font-bold mb-8">Your Items</h2>
-  <table class="w-full border-collapse border border-[#630000]">
-    <thead>
-      <tr>
-        <th
-          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
-        >
-          Name
-        </th>
-        <th
-          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
-        >
-          Amount
-        </th>
-        <th
-          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
-        >
-          Description
-        </th>
-        <th
-          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
-        >
-          Price
-        </th>
-        <th
-          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
-        >
-          Actions
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for item in items %}
-      <tr>
-        <td
-          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
-        >
-          {{item.code}} - {{ item.name }}
-        </td>
-        <td
-          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
-        >
-          {{ item.amount }}
-        </td>
-        <td
-          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
-        >
-          {{ item.description }}
-        </td>
-        <td
-          class="text-[#493323] font-semibold border border-[#493323] px-4 py-2"
-        >
-          Rp{{ item.price }}
-        </td>
-        <td
-          class="text-[#493323] font-semibold items-center text-center border border-[#493323] px-4 py-2"
-        >
-        <a href="{% url 'main:delete_item' item.id %}">
-          <button
-            class="text-black font-semibold rounded-lg bg-[#9A3B3B] px-1 py-1 mx-1 hover:bg-[#D13535]"
-          >
-            Delete Item
-          </button>
-        </a>
-          <a href="{% url 'main:increase_item_amount' item.id %}">
-          <button
-            class="text-black font-semibold rounded-lg bg-[#9A3B3B] px-1 py-1 mx-1 hover:bg-[#D13535]"
-          >
-          Increase +
-        </button>
-        </a>    
-        <a href="{% url 'main:decrease_item_amount' item.id %}">
-          <button
-            class="text-black font-semibold rounded-lg bg-[#9A3B3B] px-1 py-1 mx-1 hover:bg-[#D13535]"
-          >
-            Decrease -
-          </button>
-        </a>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
 
-  <div class="flex flex-row mt-4">
+  <div class="flex flex-wrap mb-2 items-center mx-12">
+
+    {% for item in items %}
+    <div
+      class="flex flex-col bg-[#FAF2D3]  shadow-lg rounded-lg mx-2 my-4 p-4 last:bg-yellow-300 hover:bg-[#D3D3D3] transition-all duration-300">
+
+
+      <p class="text-xl font-semibold">{{item.name}}</p>
+      <p>{{item.code}} - {{item.description}}</p>
+      <p>Price: {{item.price}}</p>
+      <p>Stock: {{item.amount}}</p>
+      <div class="flex flex-row mt-2 gap-4">
+        <a href="{% url 'main:delete_item' item.id %}">
+          <i class="fas fa-trash-alt text-red-500  cursor-pointer hover:text-red-700"></i>
+        </a>
+
+        <a href="{% url 'main:increase_item_amount' item.id %}">
+          <i class="fas fa-plus-circle text-green-500  cursor-pointer hover:text-green-700"></i>
+        </a>
+
+        <a href="{% url 'main:decrease_item_amount' item.id %}">
+          <i class="fas fa-minus-circle text-blue-500  cursor-pointer hover:text-blue-700"></i>
+        </a>
+
+      </div>
+    </div>
+
+    {% endfor %}
+
+
+  </div>
+
+  <div class="flex flex-row mx-12 my-4">
     <a href="{% url 'main:show_main' %}">
-      <button
-        class="text-black font-semibold rounded-lg bg-[#9A3B3B] py-2 px-4 mx-2 hover:bg-[#D13535]"
-      >
+      <button class="text-black font-semibold rounded-lg bg-[#9A3B3B] py-2 px-4 mx-2 hover:bg-[#D3D3D3]">
         Back to Main Menu
       </button>
     </a>
     <a href="{% url 'main:create_item' %}">
-      <button
-        class="text-black font-semibold rounded-lg bg-[#9A3B3B] py-2 px-4 mx-2 hover:bg-[#D13535]"
-      >
+      <button class="text-black font-semibold rounded-lg bg-[#9A3B3B] py-2 px-4 mx-2 hover:bg-[#D3D3D3]">
         Add Items
       </button>
     </a>
   </div>
 </div>
-
+</div>
 {% endblock %}

@@ -1126,3 +1126,346 @@ def logout_user(request):
  <h1 class="text-xl text-[#493323] font-semibold">Last login: {{last_login}}</h1>
 ...
 ```
+---
+
+# Tugas 5
+
+## Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
+ 
+<details>
+<summary>Manfaat dari setiap element selector</summary>
+
+1. Element Selector digunakan saat kita ingin mengubah semua properti tag HTML yang sama
+
+```HTML
+<body>
+  <div>
+    <h1>Testing</h1>
+    <h2>Haii</h2>
+  </div>
+  ...
+</body>
+```
+- Kita dapat menggunakan element selector untuk styling dengan contoh berikut
+```CSS
+h1 {
+  color: red;
+}
+```
+
+2. ID Selector digunakan saat kita ingin menggunakan ID pada tag sebagai selector. ID bersifat unik.
+
+```HTML
+<body>
+  <div id="header">
+    <h1>Testing</h1>
+  </div>
+  ...
+</body>
+```
+
+```CSS
+#header {
+  text-align: center;
+  color: red;
+}
+```
+
+3. Class Selector digunakan untuk mengelompokkan elemen dengan karakteristik yang sama dalam sebuah class.
+
+```HTML
+<body>
+
+<h1 class="center">Testing</h1>
+<p class="center">Haiii</p> 
+
+</body>
+```
+
+```CSS
+.center {
+  text-align: center;
+  color: red;
+}
+```
+</details>
+
+--- 
+
+## Jelaskan HTML5 Tag yang kamu ketahui.
+
+1. Tag `<a>` untuk hyperlink ke link yang dituju.
+
+2. Tag `<div>` untuk membuat container atau sebuah section.
+
+3. Tag `<head>` yang berfungsi untuk spesifikasi dokumen.
+
+4. Tag `<h1>-<h6>` yang berfungsi untuk header dari ukuran paling besar ke paling kecil.
+
+5. Tag `<img>` untuk memasukkan gambar.
+
+6. Tag `<li>` untuk membuat suatu list
+
+7. Tag `<meta>` untuk informasi yang dibutuhkan
+
+8. Tag `<p>` untuk paragraf
+
+9. Tag `<script>` untuk memasukkan script
+
+10. Tag `<table>` untuk table diikuti 
+
+11. Tag `<thead> <tr> <td>` tag thead untuk header table, tag tr untuk baris table dan td untuk cell table.
+
+12. Tag `<video>` untuk video
+
+---
+
+## Jelaskan perbedaan antara margin dan padding.
+
+1. Margin adalah penataan dari luar, sedangkan padding adalah penataan dari dalam.
+
+2. Contoh visualisasi:
+    - Sebelum margin dan padding 
+    <img src="./images/before.png">
+
+    - Setelah margin
+    <img src="./images/aftermargin.png">
+
+    - Setelah padding 
+    <img src="./images/afterpadding.png">
+
+---
+
+##  Jelaskan perbedaan antara framework CSS Tailwind dan Bootstrap. Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+1. Tailwind CSS menggabungkan kelas-kelas yang sudah didefinisikan sebelumnya. Sedangkan bootstrap menggukan styling dan komponen yang telah didefinisikan. Bootstrap juga memiliki tampilan yang sudah jadi dan dapat digunakan langsung.
+
+2. Tailwind lebih fleksibel dan adaptif terhadap proyek. Sedangkan, Bootstrap lebih konsisten dalam setiap proyek karena sudah didefinisikan sebelumnya.
+
+3. File CSS Tailwind lebih kecil dibandingkan dengan Bootstrap.
+
+4. Keduanya memiliki fungsionalitas masing-masing. Saat anda ingin membuat website dengan tata letak yang umum dan praktis dapat menggunakan Bootstrap. Namun, saat ingin membuat website dengan tata letak yang fleksibel, maka dapat menggunakan Tailwind.
+
+---
+
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+
+<details>
+<summary>Memasukkan script CDN Tailwind dan link Font Awesome</summary>
+
+1. Pada `base.html` di bagian `<head>` tambahkan
+    ```HTML
+    ...
+      <script src="https://cdn.tailwindcss.com"></script>
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+
+    ...
+    ```
+
+    
+</details>
+
+<details>
+<summary>Menambahkan Styling halaman Login, Register, Add Item, Show Item, dan main</summary>
+
+1. Pada halaman login dengan styling tengah dan memberikan warna serta bentuk yang lebih enak dilihat. Desain memanfaatkan flex
+```HTML
+{% extends 'base.html' %}
+
+{% block meta %}
+    <title>Login</title>
+{% endblock meta %}
+
+{% block content %}
+<div class="login bg-[#C08261] min-h-screen flex flex-col items-center">
+
+    <div class="flex flex-col text-center items-center gap-6 text-center bg-[#BA704F] px-32 py-10 my-32 mr-4">
+        <h1 class="text-3xl font-semibold">Login Here!</h1>
+
+        <form method="POST" action="">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Username: </td>
+                    <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
+                </tr>
+
+                <tr>    
+                    <td>Password: </td>
+                    <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
+                </tr>
+
+                <tr>
+                    <td></td>
+                    
+                    <td >
+                        <input class="text-black font-semibold mt-6 rounded-lg px-5 py-2 bg-[#9A3B3B]" 
+                        type="submit" value="Login"/>
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        {% if messages %}
+            <ul>
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <p>Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a></p>
+    </div>
+</div>
+{% endblock content %}
+
+```
+
+2. Pada halaman register yang hampir sama dengan login. Desain dengan memanfaatkan flex.
+```HTML
+{% extends 'base.html' %}
+
+{% block meta %}
+    <title>Register</title>
+{% endblock meta %}
+
+{% block content %}  
+
+<div class = "login bg-[#C08261] min-h-screen flex flex-col items-center">
+    <div class="flex flex-col items-center gap-6 text-center bg-[#BA704F] px-32 py-10 my-24">
+        <h1 class="text-3xl font-semibold">Register</h1>
+     
+
+        <form method="POST" >  
+            {% csrf_token %}  
+            <table>  
+                {{ form.as_table }}  
+                <tr>  
+                    <td></td>
+                    <td><input type="submit" class="text-black font-semibold mt-6 rounded-lg px-5 py-2 bg-[#9A3B3B]" 
+                        name="submit" value="Daftar"/></td>  
+                </tr>  
+            </table>  
+        </form>
+
+    {% if messages %}  
+        <ul>   
+            {% for message in messages %}  
+                <li>{{ message }}</li>  
+                {% endfor %}  
+        </ul>   
+    {% endif %}
+    </div>
+</div>  
+
+{% endblock content %}
+```
+
+3. Pada halaman Add Item styling tombol dengan tambahan tombol back dan pewarnaan sesuai tema. Menambahkan styling on hover pada button. Desain dengan memanfaatkan flex.
+
+```HTML
+{% extends 'base.html' %} {% block content %}
+<div
+  class="flex flex-col items-center text-white t w-full bg-[#C08261] min-h-screen"
+>
+  <h5 class="text-3xl text-[#630000] font-bold text-center mt-10 mb-14">
+    Add New Item
+  </h5>
+
+  <div class="mr-20 text-black mb-16">
+    <a href="{% url 'main:show_main' %}">
+      <button
+        class="text-black font-semibold rounded-lg bg-[#9A3B3B] px-2 mb-4 hover:bg-[#D3D3D3]"
+      >
+        Back to Main Menu
+      </button>
+    </a>
+    <form method="POST">
+      {% csrf_token %}
+      <table>
+        {{ form.as_table }}
+        <tr>
+          <td></td>
+          <td>
+            <input
+              class="cursor-pointer text-black font-semibold mt-10 rounded-lg px-5 py-2 bg-[#9A3B3B]
+               hover:bg-[#D3D3D3]" type="submit" value="Add Item"
+            />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+```
+
+4. Pada halaman show item mengganti tabel dengan bentuk card yang lebih menarik dan menambahkan button back to main menu dan add items untuk ke halaman Add Item. Menambahkan juga icon untuk delete, increase, dan decrease dari font awesome yang sudah dimasukkan sebelumnya. Desain dengan memanfaatkan flex.
+
+```HTML
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="flex flex-col pl-12  py-12 min-h-screen text-black bg-[#C08261]">
+  <h2 class="text-3xl text-[#630000] font-bold mb-8">Your Items</h2>
+
+  <div class="flex flex-wrap mb-2 items-center mx-12">
+
+    {% for item in items %}
+    <div
+      class="flex flex-col bg-[#FAF2D3]  shadow-lg rounded-lg mx-2 my-4 p-4 last:bg-yellow-300 hover:bg-[#D3D3D3] transition-all duration-300">
+
+
+      <p class="text-xl font-semibold">{{item.name}}</p>
+      <p>{{item.code}} - {{item.description}}</p>
+      <p>Price: {{item.price}}</p>
+      <p>Stock: {{item.amount}}</p>
+      <div class="flex flex-row mt-2 gap-4">
+        <a href="{% url 'main:delete_item' item.id %}">
+          <i class="fas fa-trash-alt text-red-500  cursor-pointer hover:text-red-700"></i>
+        </a>
+
+        <a href="{% url 'main:increase_item_amount' item.id %}">
+          <i class="fas fa-plus-circle text-green-500  cursor-pointer hover:text-green-700"></i>
+        </a>
+
+        <a href="{% url 'main:decrease_item_amount' item.id %}">
+          <i class="fas fa-minus-circle text-blue-500  cursor-pointer hover:text-blue-700"></i>
+        </a>
+
+      </div>
+    </div>
+
+    {% endfor %}
+
+
+  </div>
+
+  <div class="flex flex-row mx-12 my-4">
+    <a href="{% url 'main:show_main' %}">
+      <button class="text-black font-semibold rounded-lg bg-[#9A3B3B] py-2 px-4 mx-2 hover:bg-[#D3D3D3]">
+        Back to Main Menu
+      </button>
+    </a>
+    <a href="{% url 'main:create_item' %}">
+      <button class="text-black font-semibold rounded-lg bg-[#9A3B3B] py-2 px-4 mx-2 hover:bg-[#D3D3D3]">
+        Add Items
+      </button>
+    </a>
+  </div>
+</div>
+</div>
+{% endblock %}
+```
+
+5. Pada bagian bonus memanfaatkan `last:` yang merupakan pseudo class modifiers sehingga item terakhir memiliki backgorund yang berbeda sendiri.
+
+```HTML
+...
+<div class="flex flex-col bg-[#FAF2D3]  shadow-lg rounded-lg mx-2 my-4 p-4 last:bg-yellow-300 hover:bg-[#D3D3D3] transition-all duration-300">
+...
+
+```
+</details>
