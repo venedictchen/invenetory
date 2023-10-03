@@ -1132,9 +1132,6 @@ def logout_user(request):
 
 ## Jelaskan manfaat dari setiap element selector dan kapan waktu yang tepat untuk menggunakannya.
  
-<details>
-<summary>Manfaat dari setiap element selector</summary>
-
 1. Element Selector digunakan saat kita ingin mengubah semua properti tag HTML yang sama
 
 ```HTML
@@ -1188,7 +1185,6 @@ h1 {
   color: red;
 }
 ```
-</details>
 
 --- 
 
@@ -1248,7 +1244,7 @@ h1 {
 
 ---
 
-## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step (bukan hanya sekadar mengikuti tutorial).
+## Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step.
 
 <details>
 <summary>Memasukkan script CDN Tailwind dan link Font Awesome</summary>
