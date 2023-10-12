@@ -1644,3 +1644,9 @@ Saya menambahkan eventlistener onclick sehingga saat pengguna klik add Item maka
     data-bs-dismiss="modal">Add Item</button>
 ```
 </details>
+
+- Melakukan perintah collectstatic
+
+    ```sh
+    python manage.py collectstatic
+    ```
