@@ -27,12 +27,11 @@
             
         <div class="text-center mt-10 h-full">
             <p class="text-xl font-semibold text-[#493323] mb-6 ">You have {{items|length}} items here</p>
-            
             <div class="mt-8 text-center items-center">
                 <a href="{% url 'main:create_item' %}">
                     <button class="text-black font-semibold rounded-lg bg-[#9A3B3B] py-2 px-2 mx-6
                     hover:bg-[#D3D3D3]">
-                        Add New Item
+                        Add New Item - No AJAX
                     </button>
                 </a>
                 <a href="{% url 'main:show_html' %}">
