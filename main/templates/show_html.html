@@ -76,7 +76,6 @@
     return fetch("{% url 'main:show_json' %}").then((res) => res.json())
   }
 
-
   async function refreshItems() {
     document.getElementById("card_item").innerHTML = ""
     const items = await getItems()
