@@ -121,6 +121,7 @@ def add_item_ajax(request):
         description = request.POST.get("description")
         code  = request.POST.get("code")
         price = request.POST.get("price")
+        
 
         new_item = Item(user=user,name=name,amount=amount,code=code, description=description, price=price)
         new_item.save()
