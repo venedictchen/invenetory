@@ -3,7 +3,7 @@ from main.models import Item
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from django.http import HttpResponse,HttpResponseNotFound
+from django.http import HttpResponse,HttpResponseNotFound,JsonResponse
 from django.core import serializers
 from django.shortcuts import redirect
 from django.contrib.auth import authenticate, login,logout
@@ -12,6 +12,7 @@ from django.contrib import messages
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
 import datetime 
+import json
 
 
 @login_required(login_url='/login')
@@ -48,7 +49,7 @@ def show_xml(request):
     return HttpResponse(serializers.serialize("xml",data),content_type = "application/xml")
 
 def show_json(request):
-    data = Item.objects.filter(user=request.user)
+    data = Item.objects.all()
     return HttpResponse(serializers.serialize("json",data),content_type= "application/json")
 
 def show_xml_by_id(request,id):
@@ -138,3 +139,24 @@ def delete_item_ajax(request,id):
             item.delete()
             return HttpResponse(b"CREATED", status=201)
     return HttpResponseNotFound()
+
+@csrf_exempt
+def create_item_flutter(request):
+    if request.method == 'POST':
+        
+        data = json.loads(request.body)
+
+        new_item = Item.objects.create(
+            user = request.user,
+            name = data["name"],
+            amount = data["amount"],    
+            description = data["description"],
+            code = int(data["code"]),
+            price = int(data["price"]),
+        )
+
+        new_item.save()
+
+        return JsonResponse({"status": "success"}, status=200)
+    else:
+        return JsonResponse({"status": "error"}, status=401)
