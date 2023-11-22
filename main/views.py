@@ -88,6 +88,7 @@ def login_user(request):
     context = {}
     return render(request, 'login.html', context)
 
+
 def logout_user(request):
     logout(request)
     response = HttpResponseRedirect(reverse('main:login'))
