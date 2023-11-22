@@ -160,3 +160,7 @@ def create_item_flutter(request):
         return JsonResponse({"status": "success"}, status=200)
     else:
         return JsonResponse({"status": "error"}, status=401)
+    
+def show_data_user(request):
+    data = Item.objects.filter(user=request.user)
+    return HttpResponse(serializers.serialize("json",data),content_type= "application/json")
